@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'NSMutableURLRequest+ApiAuth'
-  s.version  = '0.1.0'
+  s.version  = '0.1.1'
   s.summary  = 'ApiAuth support for NSMutableURLRequest.'
   s.homepage = 'https://github.com/FWKamil/NSMutableURLRequest-ApiAuth'
   s.author   = { 'Kamil Kocemba' => 'kamil@futureworkshops.com' }
