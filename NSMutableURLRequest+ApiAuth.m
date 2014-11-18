@@ -51,6 +51,21 @@
     NSString *timestamp = [self _findHeaderWithKeys:timestampHeaders];
     NSString *uri = self.URL.path;
     
+    NSString *params = self.URL.parameterString;
+    if (params) {
+        uri = [uri stringByAppendingFormat:@";%@",params];
+    }
+    
+    NSString *query = self.URL.query;
+    if (query) {
+        uri = [uri stringByAppendingFormat:@"?%@",query];
+    }
+    
+    NSString *fragment = self.URL.fragment;
+    if (fragment) {
+        uri = [uri stringByAppendingFormat:@"#%@",fragment];
+    }
+
     return [NSString stringWithFormat:@"%@,%@,%@,%@", contentType, contentMD5, uri, timestamp];
 }
 
