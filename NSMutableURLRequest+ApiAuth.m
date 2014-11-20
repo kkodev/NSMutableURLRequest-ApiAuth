@@ -32,7 +32,12 @@
 #pragma mark - Private
 
 - (void)_setTimestamp {
+    
+    NSLocale *safeLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_GB"];
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.locale = safeLocale;
+
     dateFormatter.dateFormat = @"EE, d MMM YYYY HH:mm:ss";
     NSTimeZone *gmt = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
     [dateFormatter setTimeZone:gmt];
